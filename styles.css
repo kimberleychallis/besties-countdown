@@ -1,3 +1,7 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
 .container {
   height: 100vh;
   display: -webkit-box;
@@ -28,5 +32,26 @@
 .base-timer__path-elapsed {
   stroke-width: 7px;
   stroke: grey;
+}
+
+.base-timer__label {
+  position: absolute;
+  /* Size should match the parent container */
+  width: 300px;
+  height: 300px;
+  /* Keep the label aligned to the top */
+  top: 0;
+  /* Create a flexible box that centers content vertically and horizontally */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  /* Sort of an arbitrary number; adjust to your liking */
+  font-size: 48px;
 }
 /*# sourceMappingURL=styles.css.map */
