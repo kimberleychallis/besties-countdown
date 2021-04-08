@@ -1,4 +1,5 @@
 document.getElementById("app").innerHTML = `
+<div class="container">
 <div class="base-timer">
   <svg class="base-timer__svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
     <g class="base-timer__circle">
@@ -9,4 +10,5 @@ document.getElementById("app").innerHTML = `
     <!-- Remaining time label -->
   </span>
 </div>  
+</div>
 `;

@@ -1,3 +1,10 @@
+.container {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 /* Sets the containers height and width */
 .base-timer {
   position: relative;
