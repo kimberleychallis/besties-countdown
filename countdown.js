@@ -1,39 +1,40 @@
-// Start with an initial value of 20 seconds
-const timeLimit = 20;
+function getTimeRemaining(endtime) {
+  const total = Date.parse(endtime) - Date.parse(new Date());
+  const seconds = Math.floor((total / 1000) % 60);
+  const minutes = Math.floor((total / 1000 / 60) % 60);
+  const hours = Math.floor((total / (1000 * 60 * 60)) % 24);
+  const days = Math.floor(total / (1000 * 60 * 60 * 24));
 
-// Initially, no time has passed, but this will count up
-// and subtract from the timeLimit
-let timePassed = 0;
-let timeLeft = timeLimit;
+  return {
+    total,
+    days,
+    hours,
+    minutes,
+    seconds,
+  };
+}
 
-formatTimeLeft = (time) => {
-  // The largest round integer less than or equal to the result of time divided being by 60.
-  const minutes = Math.floor(time / 60);
+function initializeClock(endtime) {
+  function updateClock() {
+    const t = getTimeRemaining(endtime);
 
-  // Seconds are the remainder of the time divided by 60 (modulus operator)
-  let seconds = time % 60;
+    document.getElementById("app").innerHTML = `
+      <div>
+        <div class="days">${("0" + t.days).slice(-2)} days</div>
+        <div class="hours">${("0" + t.hours).slice(-2)} hours</div>
+        <div class="minutes">${("0" + t.minutes).slice(-2)} minutes</div>
+        <div class="seconds">${("0" + t.seconds).slice(-2)} seconds</div>
+      </div>
+    `;
 
-  // If the value of seconds is less than 10, then display seconds with a leading zero
-  if (seconds < 10) {
-    seconds = `0${seconds}`;
+    if (t.total <= 0) {
+      clearInterval(timeinterval);
+    }
   }
 
-  // The output in MM:SS format
-  return `${minutes}:${seconds}`;
-};
+  updateClock();
+  const timeinterval = setInterval(updateClock, 1000);
+}
 
-document.getElementById("app").innerHTML = `
-<div class="container">
-
-<div class="base-timer">
-  <svg class="base-timer__svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-    <g class="base-timer__circle">
-      <circle class="base-timer__path-elapsed" cx="50" cy="50" r="45" />
-    </g>
-  </svg>
-  <span id="base-timer-label" class="base-timer__label">
-    ${formatTimeLeft(timeLeft)}
-  </span>
-</div>  
-</div>
-`;
+const pubTime = new Date("April 12 2021 19:00:00 GMT");
+initializeClock(pubTime);
