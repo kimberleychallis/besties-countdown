@@ -19,7 +19,7 @@ function initializeClock(endtime) {
     const t = getTimeRemaining(endtime);
 
     document.getElementById("app").innerHTML = `
-    <div><img class="logo" src="FatWalrusLogo.png" /></div>  
+      
     <div>
         <div class="days">${("0" + t.days).slice(-2)} days</div>
         <div class="hours">${("0" + t.hours).slice(-2)} hours</div>

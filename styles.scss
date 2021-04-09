@@ -1,9 +1,11 @@
 body {
   font-family: "Bebas Neue", sans-serif;
   font-size: 4rem;
-  display: grid;
+  // display: grid;
   height: 100vh;
-  place-items: center;
+  // place-items: center;
+  position: relative;
+
   background-image: linear-gradient(
     to right,
     #b8cbb8 0%,
@@ -17,6 +19,12 @@ body {
   text-transform: uppercase;
 }
 
+.container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 .logo {
   height: 4rem;
 }
