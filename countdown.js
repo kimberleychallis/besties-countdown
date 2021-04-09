@@ -21,10 +21,10 @@ function initializeClock(endtime) {
     document.getElementById("app").innerHTML = `
       
     <div>
-        <div class="days">${("0" + t.days).slice(-2)} days</div>
-        <div class="hours">${("0" + t.hours).slice(-2)} hours</div>
-        <div class="minutes">${("0" + t.minutes).slice(-2)} minutes</div>
-        <div class="seconds">${("0" + t.seconds).slice(-2)} seconds</div>
+        <div class="days"><p>${("0" + t.days).slice(-2)} days</p></div>
+        <div class="hours"><p>${("0" + t.hours).slice(-2)} hours</p></div>
+        <div class="minutes"><p>${("0" + t.minutes).slice(-2)} minutes</p></div>
+        <div class="seconds"><p>${("0" + t.seconds).slice(-2)} seconds</p></div>
       </div>
     `;
 

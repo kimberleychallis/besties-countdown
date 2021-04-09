@@ -1,22 +1,31 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+html,
 body {
-  font-family: "Bebas Neue", sans-serif;
-  font-size: 3rem;
   height: 100vh;
   width: 100vw;
   background-image: linear-gradient(
     to top right,
-    #b8cbb8 0%,
-    #b8cbb8 0%,
     #b465da 0%,
     #cf6cc9 33%,
     #ee609c 66%,
     #ee609c 100%
   );
-  color: white;
-  text-transform: uppercase;
 }
 
-.center {
+p {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 40px;
+  color: white;
+  text-transform: uppercase;
+  padding: 0;
+  margin: 0;
+}
+
+/* .center {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -27,8 +36,22 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+} */
+
+.center {
+  /* background-color: #cf6cc9; */
+
+  height: 100%;
+  display: grid;
+  place-items: center;
+}
+
+.container {
+  width: 175px;
+  /* background-color: #ee609c; */
+  /* border: 1px solid white; */
 }
 
 .logo {
-  height: 4rem;
+  height: 80px;
 }
